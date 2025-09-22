@@ -2,7 +2,7 @@
 public class Rot13 {
     public static void main(String[] args) {
         System.out.println("Text a codificar");
-        String text = "Hola, texto para probar";
+        String text = "Hola, texto para probar. abcdefghijklmnñopqrstuvwxyzáàéèíìïóòúùüç";
         String codificat = xifraRot13(text);
         System.out.println(codificat);
         System.out.println(desxifraRot13(codificat));
@@ -22,9 +22,9 @@ public class Rot13 {
                 char c2 = abcminus[e];
                 if (Character.toLowerCase(c) == c2) {
                     if(Character.isUpperCase(c)) {
-                        retornar += abcmayus[(e + 13) % 40];
+                        retornar += abcmayus[(e + 13) % abcmayus.length];
                     } else {
-                        retornar += abcminus[(e + 13) % 40];
+                        retornar += abcminus[(e + 13) % abcminus.length];
                     }
                 } else {
                     continue;
@@ -51,9 +51,10 @@ public class Rot13 {
                 char c2 = abcminus[e];
                 if(Character.toLowerCase(c) == c2) {
                     if(Character.isUpperCase(c)) {
-                        retornar += abcmayus[(e-13) % 40];
+                        retornar += abcmayus[(e-13 + abcminus.length) % abcminus.length];
                     } else {
-                        retornar += abcminus[(e-13) % 40];
+                        
+                        retornar += abcminus[(e-13 + abcminus.length) % abcminus.length];
                     }
                 } 
             }
