@@ -1,0 +1,24 @@
+# Archivos compilados
+*.class
+
+# Directorios de salida de compilación
+/bin/
+/build/
+/out/
+
+# Archivos de paquetes locales de Maven
+/target/
+
+# Archivos de configuración de IDE
+/.idea/
+/*.iml
+/.vscode/
+
+# Archivos de registro y temporales
+*.log
+*.tmp
+*.swp
+
+# Archivos de sistema (Windows, macOS)
+Thumbs.db
+.DS_Store
